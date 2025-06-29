@@ -57,7 +57,7 @@ nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-l> :UndotreeToggle<CR>
-
+nnoremap <leader>t :terminal<CR>
 " vim AIRLINE CONFIGURATION
 
 let g:airline_powerline_fonts = 1
