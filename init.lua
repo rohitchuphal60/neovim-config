@@ -83,8 +83,10 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
-
--- Set <space> as the leader key
+require 'custom.plugins.assembly'
+require 'custom.plugins.c_cpp'
+require 'custom.plugins.java'
+require 'custom.plugins.python'
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = '\\'
@@ -720,14 +722,11 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'bash',
-        'c',
-        'cpp', -- Add this for C++
-        'java', -- Add this for Java
-        'python', -- Add this for Python
-        'asm', -- Add this for Assembly (sometimes called 'assembly')
-        'diff',
-        'html',
+        'clangd', -- for C/C++
+        'jdtls', -- for Java
+        'pyright', -- for Python
+        'asm-lsp', -- for Assembly (if available)
+        -- remove "c", "cpp", "java", "python", "asm"
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
