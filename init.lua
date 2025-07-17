@@ -83,10 +83,7 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
-require 'custom.plugins.assembly'
-require 'custom.plugins.c_cpp'
-require 'custom.plugins.java'
-require 'custom.plugins.python'
+
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = '\\'
@@ -1044,6 +1041,10 @@ require('lazy').setup({
     },
   },
 })
+require 'custom.plugins.assembly'
+require 'custom.plugins.c_cpp'
+require 'custom.plugins.java'
+require 'custom.plugins.python'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
