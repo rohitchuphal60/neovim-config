@@ -673,7 +673,7 @@ require('lazy').setup({
         clangd = {}, -- For C/C++
         jdtls = {}, -- For Java
         pyright = {}, -- For Python
-        asm_lsp = {}, -- For Assembly (or use 'asm-lsp' if supported by mason)
+        --asm-lsp = {}, -- CORRECT-- For Assembly (or use 'asm-lsp' if supported by mason)
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -722,7 +722,7 @@ require('lazy').setup({
         'clangd', -- for C/C++
         'jdtls', -- for Java
         'pyright', -- for Python
-        'asm-lsp', -- for Assembly (if available)
+        --'asm-lsp', -- for Assembly (if available)
         -- remove "c", "cpp", "java", "python", "asm"
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -1014,7 +1014,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  { import = 'custom.plugins' },
+
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
