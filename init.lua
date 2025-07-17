@@ -671,6 +671,10 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
+        clangd = {}, -- For C/C++
+        jdtls = {}, -- For Java
+        pyright = {}, -- For Python
+        asm_lsp = {}, -- For Assembly (or use 'asm-lsp' if supported by mason)
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -716,6 +720,14 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'bash',
+        'c',
+        'cpp', -- Add this for C++
+        'java', -- Add this for Java
+        'python', -- Add this for Python
+        'asm', -- Add this for Assembly (sometimes called 'assembly')
+        'diff',
+        'html',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -768,6 +780,11 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        c = { 'clang-format' },
+        cpp = { 'clang-format' },
+        java = { 'google-java-format' }, -- Or other Java formatter
+        python = { 'black', 'isort' },
+        asm = {}, -- Typically not auto-formatted, but you can search for available formatters
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
