@@ -126,13 +126,15 @@ vim.o.undofile = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
+vim.o.smartindent = false
 -- Keep signcolumn on by default
 vim.o.signcolumn = 'yes'
-
+vim.o.cindent = false
 -- Decrease update time
 vim.o.updatetime = 250
-
+vim.o.smarttab = false
+vim.o.shiftwidth = 0
+vim.o.tabstop = 1
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
